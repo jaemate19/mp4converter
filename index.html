@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP4 to MP3 Converter</title>
+
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<!-- 
+  The data-state attribute on body tracks the application's current status
+  Possible values: idle, ready, uploading, done, error
+  This allows CSS to style the page differently based on app state
+-->
+<body data-state="idle">
+  <main class="app">
+    <h1 class="app__title">MP4 → MP3 Converter</h1>
+
+    <!-- 
+      FILE UPLOAD SECTION
+      This is where users interact to select their video file
+      aria-label helps screen readers understand this is a file upload area
+      tabindex="0" makes the div focusable via keyboard
+    -->
+    <section class="dropzone" id="dropzone" aria-label="File upload area" tabindex="0">
+      <p class="dropzone__message" id="dropMessage">
+        Drag & drop your MP4 file here
+      </p>
+      <p class="dropzone__or">OR</p>
+      <button type="button" class="btn" id="selectBtn">
+        Select File
+      </button>
+      <input type="file" id="fileInput" accept="video/mp4" hidden/>
+    </section>
+
+    <!-- 
+      STATUS DISPLAY SECTION
+      Shows feedback about the current operation
+      aria-live="polite" tells screen readers to announce changes without interrupting
+    -->
+    <section class="status" aria-live="polite">
+      <p class="status__filename" id="fileName"></p>
+      <div class="loader" id="loader" hidden></div>
+      <p class="status__error" id="errorMsg"></p>
+    </section>
+
+    <!-- 
+      ACTION BUTTONS SECTION
+      Contains the main user actions (convert/download)
+      Elements are shown/hidden based on app state
+    -->
+    <section class="actions">
+      <button type="button" class="btn btn--primary" id="convertBtn" hidden>
+        Convert
+      </button>
+      <a id="downloadLink" class="download" hidden download>
+        Download MP3
+      </a>
+    </section>
+  </main>
+
+  <!-- Link to JavaScript file that handles all the functionality -->
+  <script src="script.js"></script>
+</body>
+</html>
