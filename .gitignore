@@ -1,0 +1,5 @@
+jobs/
+*.log
+*.mp3
+*.mp4
+.env

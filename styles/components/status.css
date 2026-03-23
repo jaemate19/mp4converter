@@ -1,0 +1,12 @@
+
+.status 
+{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.status__error 
+{
+  color: red;
+  margin-top: 0.5rem;
+}
