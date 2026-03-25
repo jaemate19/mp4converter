@@ -44,4 +44,6 @@ It demonstrates backend development, file handling, and integration with multime
 ```bash
 git clone https://github.com/jaemate19/mp4converter.git
 cd mp4converter
+chmod +x setup.sh
+./configure
 ```
